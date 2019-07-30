@@ -78,7 +78,7 @@ gtag('config', 'UA-112397632-1');
 có công thức tính:</p>
 
 <script type="math/tex; mode=display">f_0 = 0\\
-f_i = max\{f_{j-1} + p_j \mid j \in [1, i], t_j \geq i\}</script>
+f_i = min\{f_{j-1} + p_j \mid j \in [1, i], t_j \geq i\}</script>
 
 <p>Ta dùng heap để giảm độ phức tạp về <script type="math/tex">O(n\log n)</script> như đoạn code bên dưới. Cụ thể
 như sau:</p>
