@@ -8,7 +8,7 @@ Vue.component('sortus', {
         </span>`,
 });
 
-var db = new Database("http://35.232.223.222/");
+var db = new Database("https://vietcodes.com/");
 
 new Vue({
     el: "#app",
