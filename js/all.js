@@ -1,4 +1,5 @@
 function loadComments() {
+    if (document.getElementById("btn-load-cmt") === null) return;
     document.getElementById("btn-load-cmt").innerHTML="Loading...";
     // Load the plugin, code from Disqus's documents
     (function() {
