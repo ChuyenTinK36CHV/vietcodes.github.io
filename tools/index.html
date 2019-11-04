@@ -32,40 +32,53 @@ gtag('config', 'UA-112397632-1');
 
     <script>document.body.style.backgroundColor = "white";</script>
 
-<div class="container" style="margin-top: 1em;">
-  <div class="row">
-    <div class="col-md-4">
-<div class="card">
-  <div class="card-body">
-    <h4 class="card-title">Base Converter</h4>
-    <p class="card-text">
-Convert between binary, octal, decimal and hexadecimal.
-<br/>
-Support 8-bit, 16-bit, 32-bit, 64-bit number and
-two's complement format for negative number.
-    </p>
-    <a href="numbase" class="card-link">Open</a>
-    <a href="https://github.com/juchiast/numbase-rs" class="card-link">Source Code</a>
+<style>
+.grid-container {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: auto auto auto;
+}
+</style>
+
+<div class="container grid-container" style="margin-top: 1em;">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Thống kê VNOI</h4>
+      <p class="card-text">
+      Xem bài nào được nhiều người nộp trong ngày, tuần,...
+      </p>
+    </div>
+    <div class="card-footer">
+      <a href="/status" class="card-link">Open</a>
+    </div>
   </div>
-</div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Base Converter</h4>
+      <p class="card-text">
+      Convert between binary, octal, decimal and hexadecimal.
+      <br/>
+      Support 8-bit, 16-bit, 32-bit, 64-bit number and
+      two's complement format for negative number.
+      </p>
     </div>
-    <div class="col-md-4">
-<div class="card">
-  <div class="card-body">
-    <h4 class="card-title">Floater</h4>
-    <p class="card-text">
-Convert between floating-point number and binary presentation.
-<br/>
-Support both single-precision and double-precision.
-    </p>
-    <a href="floater" class="card-link">Open</a>
-    <a href="https://github.com/juchiast/floater-rs" class="card-link">Source Code</a>
+    <div class="card-footer">
+      <a href="numbase" class="card-link">Open</a>
+      <a href="https://github.com/juchiast/numbase-rs" class="card-link">Source Code</a>
+    </div>
   </div>
-</div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Floater</h4>
+      <p class="card-text">
+      Convert between floating-point number and binary presentation.
+      <br/>
+      Support both single-precision and double-precision.
+      </p>
     </div>
-    <div class="col-md-4">
-    </div>
-    <div class="col-md-4">
+    <div class="card-footer">
+      <a href="floater" class="card-link">Open</a>
+      <a href="https://github.com/juchiast/floater-rs" class="card-link">Source Code</a>
     </div>
   </div>
 </div>
