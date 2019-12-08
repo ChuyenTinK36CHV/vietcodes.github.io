@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title> Lý thuyết nhóm - VietCodes </title>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Mono">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/all.css">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-7341625737995843",
+          enable_page_level_ads: true
+     });
+</script>
+
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML' defer></script>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112397632-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-112397632-1');
+    </script>
+  </head>
+  <body>
+    <p class="brand">
+<span class="keyword">let</span> menu <span class="op">=</span>
+[<span class="string">"<a href="/">Home</a>"</span>,
+<span class="string">"<a href="/algorithms">Algorithms</a>"</span>,
+<span class="string">"<a href="/codehub">CodeHub</a>"</span>,
+<span class="string">"<a href="/status">VNOI Statistics</a>"</span>];
+</p>
+
+    <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8" style="padding-left:7px; padding-right:7px">
+      <div class="card window" id="content">
+  <div class="card-header window-header">
+    <div class="btn-close"></div>
+    <div class="btn-minimize"></div>
+    <div class="btn-maximize"></div>
+    <span class="title">Lý thuyết nhóm</span>
+  </div>
+  <div class="card-body window-body content">
+
+        <p class="content-title">Lý thuyết nhóm</p>
+        <div class="card card-body bg-light toc">
+          <p><b>Contents</b></p>
+          <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#nhóm-group">Nhóm (Group)</a></li>
+<li class="toc-entry toc-h2"><a href="#nhóm-con-subgroup">Nhóm con (Subgroup)</a></li>
+<li class="toc-entry toc-h2"><a href="#cyclic-group-và-phần-tử-sinh">Cyclic group và phần tử sinh</a></li>
+<li class="toc-entry toc-h2"><a href="#nhóm-hữu-hạn-bậc-order-của-nhóm-và-bậc-của-phần-tử">Nhóm hữu hạn, bậc (order) của nhóm và bậc của phần tử</a></li>
+<li class="toc-entry toc-h2"><a href="#định-lý-lagrange">Định lý Lagrange</a></li>
+<li class="toc-entry toc-h1"><a href="#vành-ring">Vành (Ring)</a></li>
+<li class="toc-entry toc-h1"><a href="#trường-field">Trường (Field)</a></li>
+</ul>
+        </div>
+        <p>Bài viết này sẽ giới thiệu kiến thức cơ bản về các khái niệm như
+nhóm, vành, trường, trường hữu hạn.</p>
+
+<h1 id="nhóm-group">Nhóm (Group)</h1>
+
+<p>Nhóm là một tập hợp G và một phép toán 2 ngôi <script type="math/tex">\bullet</script>, <script type="math/tex">(G, \bullet)</script>
+phải thỏa các tính chất sau:</p>
+<ul>
+  <li>Tính đóng (Closure): Với mọi <script type="math/tex">a, b \in G</script>, ta có <script type="math/tex">a \bullet b \in G</script></li>
+  <li>Tính kết hợp (Associativity): Với mọi <script type="math/tex">a, b, c \in G</script>, ta có: <script type="math/tex">(a \bullet b) \bullet c = a \bullet (b \bullet c)</script></li>
+  <li>Phần tử đơn vị (Identity element): Tồn tại một phần tử đơn vị <script type="math/tex">e \in G</script> thỏa <script type="math/tex">e \bullet a = a \bullet e = a</script>, với
+mọi <script type="math/tex">a \in G</script>. Nếu tồn tại, phần tử đơn vị là duy nhất.</li>
+  <li>Phần tử nghịch đảo (Inverse element): với mỗi <script type="math/tex">a \in G</script>, tồn tại <script type="math/tex">b \in G</script> thỏa <script type="math/tex">a \bullet b = b \bullet a = e</script>,
+với <script type="math/tex">e</script> là phần tử đơn vị của nhóm. Phần tử nghịch đảo của <script type="math/tex">a</script> thường được kí hiệu là <script type="math/tex">a^{-1}</script> hoặc <script type="math/tex">-a</script>, tùy theo
+phép toán đang sử dụng.</li>
+</ul>
+
+<p>Ví dụ:</p>
+<ul>
+  <li>Nhóm: Tập hợp số nguyên <script type="math/tex">\mathbb{Z}</script> với phép toán cộng. Phần tử đơn vị là 0.</li>
+  <li>Không phải nhóm: Tập <script type="math/tex">\mathbb{Z}</script> với phép toán nhân (không có phần tử nghịch đảo).</li>
+</ul>
+
+<h2 id="nhóm-con-subgroup">Nhóm con (Subgroup)</h2>
+
+<p>Cho nhóm G với phép toán <script type="math/tex">\bullet</script>, tập con H của G được gọi là nhóm con nếu H và
+<script type="math/tex">\bullet</script> cũng tạo thành một nhóm. Khi H là nhóm con của G, ta kí hiệu <script type="math/tex">H \leq G</script>.</p>
+
+<p>Ví dụ, xét nhóm <script type="math/tex">(\mathbb{Z}, +)</script>, khi đó ta có một nhóm con là tập hợp các số chẵn,
+tuy nhiên tập hợp các số lẻ không phải là nhóm con của <script type="math/tex">(\mathbb{Z}, +)</script>, do không thỏa
+tính đóng (tổng 2 số lẻ là một số chẵn).</p>
+
+<p>Khi H là nhóm con của G, ta có tính chất sau: Phần tử đơn vị của G cũng chính là phần tử đơn
+vị của H.</p>
+
+<h2 id="cyclic-group-và-phần-tử-sinh">Cyclic group và phần tử sinh</h2>
+
+<p>Xét nhóm G với phép toán <script type="math/tex">\bullet</script>. Ta kí hiệu phép “lũy thừa” với ý nghĩa như sau:</p>
+<ul>
+  <li><script type="math/tex">a^0 = e</script>, với e là phần tử đơn vị.</li>
+  <li>
+    <script type="math/tex; mode=display">a^1 = a</script>
+  </li>
+  <li>
+    <script type="math/tex; mode=display">a^2 = a \bullet a</script>
+  </li>
+  <li>
+    <script type="math/tex; mode=display">a^3 = a \bullet a \bullet a</script>
+  </li>
+  <li>
+    <script type="math/tex; mode=display">a^{-2} = a^{-1} \bullet a^{-1}</script>
+  </li>
+  <li>…</li>
+</ul>
+
+<p>Khi đó, G là một cyclic group nếu tồn tại <script type="math/tex">g \in G</script> sao cho, với mỗi <script type="math/tex">a \in G</script>, <script type="math/tex">a = g^k</script>
+với một số nguyên k nào đó. G sẽ có dạng:</p>
+
+<script type="math/tex; mode=display">\dots, g^{-3}, g^{-2}, g^{-1}, g^0 (= e), g^1, g^2, g^3, \dots</script>
+
+<p><script type="math/tex">g</script> sẽ được gọi là <strong>phần tử sinh</strong> của nhóm.</p>
+
+<p>Ví dụ, <script type="math/tex">(\mathbb{Z}, +)</script> là một cyclic group với phần tử sinh là 1.</p>
+
+<h2 id="nhóm-hữu-hạn-bậc-order-của-nhóm-và-bậc-của-phần-tử">Nhóm hữu hạn, bậc (order) của nhóm và bậc của phần tử</h2>
+
+<p>Nhóm hữu hạn là một nhóm có số phần tử hữu hạn. Một loại nhóm hữu hạn mà ta thường gặp
+là nhóm số nguyên đồng dư <script type="math/tex">\mathbb{Z_n}</script>, xem thêm <a href="/algo/modulo">Toán đồng dư</a>.</p>
+
+<p>Xét một nhóm hữu hạn G,</p>
+<ul>
+  <li>Bậc của nhóm là số phần tử của nhóm đó, kí hiệu <script type="math/tex">\lvert G \vert</script>.</li>
+  <li>Bậc của một phần tử <script type="math/tex">a \in G</script> là số nguyên dương <script type="math/tex">m</script> nhỏ nhất sao cho <script type="math/tex">a^m = e</script>, với
+<script type="math/tex">e</script> là phần tử đơn vị của nhóm, kí hiệu <script type="math/tex">\lvert a \rvert</script>.</li>
+</ul>
+
+<p>Ký hiệu <script type="math/tex">\langle a \rangle</script> là nhóm con sinh bởi <script type="math/tex">a \in G</script>, <script type="math/tex">\langle a \rangle = \{a^k \vert k \in \mathbb{Z}\}</script>.
+Ta có tính chất sau: <script type="math/tex">\lvert \langle a \rangle \rvert = \lvert a \rvert</script>, phát biểu bằng lời:
+“Bậc của nhóm con sinh bởi a bằng bậc của a”</p>
+
+<h2 id="định-lý-lagrange">Định lý Lagrange</h2>
+
+<p>Phát biểu định lý Lagrange: “Nếu H là nhóm con của G thì <script type="math/tex">\vert H \vert</script> là ước của <script type="math/tex">\vert G\vert</script>”.</p>
+
+<p>Một số hệ quả:</p>
+<ul>
+  <li><script type="math/tex">\vert G \vert \vdots \vert a \vert</script> với mọi <script type="math/tex">a \in G</script></li>
+  <li>
+    <p>Định lý Fermat nhỏ: <script type="math/tex">a^{p-1} = 1 \pmod p</script> với p nguyên tố và <script type="math/tex">a \ne 0</script>. Chứng minh:</p>
+
+    <p>Xét nhóm nhân <script type="math/tex">\mathbb{Z}_p^* = \{\bar{1}, \bar{2}, \dots, \overline{p-1}\}</script>, ta có
+<script type="math/tex">\vert \mathbb{Z}_p^* \vert = p - 1</script>.</p>
+
+    <p>Mặt khác, <script type="math/tex">\vert \mathbb{Z}_p^* \vert \vdots \vert a \vert</script> nên <script type="math/tex">a^{p-1} = a^{k\vert a \vert} = 1 \pmod p</script>,
+(do <script type="math/tex">a^{\vert a \vert} = 1 \pmod p</script>, theo định nghĩa bậc của phần tử)</p>
+  </li>
+  <li>Định lý Euler: ta cũng có thể chứng minh định lý Euler tương tự như trên.</li>
+</ul>
+
+<h1 id="vành-ring">Vành (Ring)</h1>
+
+<p>Xét tập hợp R với 2 phép toán + và <script type="math/tex">\cdot</script>, R được gọi là một vành nếu ta có các tính chất sau:</p>
+<ul>
+  <li>Cộng và nhân có tính đóng</li>
+  <li>Cộng và nhân có tính kết hợp: <script type="math/tex">\forall a, b, c \in R, (a + b) + c = a + (b + c), (a \cdot b) \cdot c = a \cdot (b \cdot c)</script></li>
+  <li>Tồn tại phần tử đơn vị cho phép cộng và nhân, ta kí hiệu 0 và 1 lần lượt là phần tử đơn vị
+của phép cộng và nhân: <script type="math/tex">\forall a \in R, a + 0 = 0 + a = a, a \cdot 1 = 1 \cdot a = a</script></li>
+  <li>Phép cộng có tính giao hoán: <script type="math/tex">a + b = b + a, \forall a, b \in R</script></li>
+  <li>Tồn tại phần tử nghịch đảo cho phép cộng, <script type="math/tex">\forall a \in R, \exists b \in R, a + b = 0</script></li>
+  <li>
+    <p>Tính phân phối của phép nhân đối với phép cộng:</p>
+
+    <script type="math/tex; mode=display">a \cdot (b + c) = (a \cdot b) + (a \cdot b)</script>
+
+    <script type="math/tex; mode=display">(b + c) \cdot a = (b \cdot a) + (c \cdot a)</script>
+  </li>
+</ul>
+
+<p>Lưu ý là phép nhân không cần có tính giao hoán và không cần phải có phần tử nghịch đảo.</p>
+
+<p>Ví dụ: Tập hợp các ma trận vuông 2x2 trên tập số thực là một vành. Tổng quát hơn, nếu
+R là một vành thì tập hợp các ma trận nxn với mỗi phần tử ma trận <script type="math/tex">\in R</script>, kí hiệu <script type="math/tex">M_n(R)</script>, cũng là một vành.</p>
+
+<h1 id="trường-field">Trường (Field)</h1>
+
+<p>Xét tập hợp F với 2 phép toán + và <script type="math/tex">\cdot</script>. F được gọi là một trường nếu nó thỏa các tính chất sau:</p>
+<ul>
+  <li>Cộng và nhân có tính đóng</li>
+  <li>Cộng và nhân có tính giao hoán</li>
+  <li>Tồn tại phần tử đơn vị cho cộng và nhân, kí hiệu lần lượt là 0 và 1.</li>
+  <li>Tồn tại phần tử nghịch đảo <script type="math/tex">-a</script> với <script type="math/tex">\forall a \in F</script>, thỏa <script type="math/tex">a + (-a) = 0</script></li>
+  <li>Với <script type="math/tex">\forall a \ne 0</script>, tồn tại <script type="math/tex">a^{-1}</script> thỏa <script type="math/tex">a \cdot a^{-1} = 1</script></li>
+  <li>Tính phân phối của phép nhân đối với phép cộng: <script type="math/tex">a \cdot (b + c) = (a \cdot b) + (a \cdot b)</script></li>
+</ul>
+
+<p>Trường hữu hạn là một trường có số phần tử là hữu hạn. Một trường hữu hạn thường gặp là <script type="math/tex">\mathbb{Z}_p</script>
+với p nguyên tố.</p>
+
+<p>Bài viết chi tiết về trường và trường hữu hạn sẽ được thêm vào trong tương lai.</p>
+
+        </div>
+</div>
+
+    </div>
+    <div class="col-md-4" style="padding-left:7px; padding-right:7px">
+      <div class="card window" id="">
+  <div class="card-header window-header">
+    <div class="btn-close"></div>
+    <div class="btn-minimize"></div>
+    <div class="btn-maximize"></div>
+    <span class="title">Quảng cáo :(</span>
+  </div>
+  <div class="card-body window-body content">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- right-panel -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7341625737995843"
+       data-ad-slot="6239912082"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  </div>
+</div>
+
+
+      <button onclick="loadComments()" class="btn btn-lg btn-success btn-block btn-load-cmt" id="btn-load-cmt">Load comments</button>
+<div class="hide" id="disqus-window">
+  <div class="card window" id="">
+  <div class="card-header window-header">
+    <div class="btn-close"></div>
+    <div class="btn-minimize"></div>
+    <div class="btn-maximize"></div>
+    <span class="title">Comments</span>
+  </div>
+  <div class="card-body window-body content">
+
+  <div id="disqus_thread"></div>
+    </div>
+</div>
+
+</div>
+
+<script>
+var disqus_config = function () {
+    this.page.url = "https://vietcodes.github.io/algo/group-theory";
+    this.page.identifier = "https://vietcodes.github.io/algo/group-theory";
+};
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    </div>
+  </div>
+</div>
+
+    <footer class="page-footer">
+    <div class="footer-copyright">
+        <div class="container-fluid">
+          &copy; 2019 VietCodes &bullet; <a href="/products">Products</a>
+        </div>
+    </div>
+</footer>
+
+    <script src="/js/all.js"></script>
+  </body>
+</html>
